@@ -3,7 +3,7 @@ Ein einfacher Ablauf in BPMN
 Beginnen wir unser BPMN-Tutorial mit einem recht einfachen Prozessdiagramm:
 
 
-
+<img src="./images/tutorial-01.PNG"> </img>
 
 Hunger bemerkt Lebensmittel einkaufen Mahlzeit vorbereiten Mahlzeit zubereiten Mahlzeit essen Hunger gestillt
 
@@ -14,4 +14,3 @@ Ereignisse beziehen sich auf etwas, das unabhängig vom Prozess bereits geschehe
  FAQ: Ist es zwingend erforderlich, BPMN-Diagramme horizontal zu zeichnen? Was ist, wenn ich sie lieber vertikal zeichne?
 Sie können Ihre Diagramme immer von oben nach unten statt von links nach rechts zeichnen - der BPMN 2.0-Standard verbietet das nicht. Wir empfehlen es jedoch nicht: Es ist sehr unüblich, und die Erfahrung hat gezeigt, dass die Menschen den Prozessfluss besser verstehen, wenn er auf dieselbe Weise beschrieben wird wie ein geschriebener Text (von links nach rechts, zumindest in der westlichen Welt).
 
-Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
