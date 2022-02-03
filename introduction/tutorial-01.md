@@ -8,13 +8,13 @@ Beginnen wir unser BPMN-Tutorial mit einem recht einfachen Prozessdiagramm:
 <li>
 1 Hunger festgestellt 
 </li><li>
-2 Lebensmittel einkaufen 
+2 einkaufen der Lebensmittel
  </li><li>
-3 Gericht vorbereiten 
+3 zubereiten der Mahlzeit 
  </li><li>
-4 Gericht zubereiten
+4 Mahlzeit fertig
  </li><li>
-5 Gericht essen 
+5 essen der Mahlzeit
  </li><li>
 6 Hunger gestillt
 </li><p>
