@@ -12,7 +12,7 @@ Beginnen wir unser BPMN-Tutorial mit einem recht einfachen Prozessdiagramm:
  </li><li>
 3 Mahlzeit zubereiten
  </li><li>
-4 Mahlzeit fertig
+4 Mahlzeit zubereitet
  </li><li>
 5 Mahlzeit essen
  </li><li>
