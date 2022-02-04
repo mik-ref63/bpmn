@@ -2,9 +2,9 @@
 
 Beginnen wir unser BPMN-Tutorial mit einem recht einfachen Prozessdiagramm:
 
-
+<h4>Diagramm </h4> <b>Prozess "Hunger stillen"</b>
 <img src="./images/tutorial-01.png"> </img>
-
+<h4>Ergänzende Beschreibung ohne weitere Detaillierung</h4>
 <li>
 1 Hunger festgestellt 
 </li><li>
