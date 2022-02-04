@@ -1,10 +1,11 @@
 <h3>Ablauf mit Verantwortlichkeiten, Verzweigungen, Zeitereignis und Benachrichtigungen</h3>
-
+<h4>Diagramm </h4> <b>Prozess "Webanalysebericht bearbeiten"</b>
 <img src="./images/webanalyse-berichtsprozess.png"> </img>
 
+<h4>Prozessbeschreibung mit weiteren Detaills</h4>
 
 <li>
-1 Monatsbericht versendet
+1 Monatsbericht versendet<p>Monatlich versendeter Matomobericht wird per Email an dass Webredaktionspostfach gesendet</p> 
 </li><li>
 2 Ist Zeitereignis eingetreten? 
  </li><li>
