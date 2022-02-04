@@ -1,6 +1,6 @@
 <h3>Ablauf mit Verantwortlichkeiten, Verzweigungen, Zeitereignis und Benachrichtigungen</h3>
 
-<img src="./images/webanalyse_berichtsprozess.png"> </img>
+<img src="./images/webanalyse-berichtsprozess.png"> </img>
 
 
 <li>
@@ -14,7 +14,7 @@
  </li><li>
 5 Halbjahresbericht erstellen
  </li><li>
-6 Halbjahresbericht in EL.DOK ablegen
+6 Halbjahresbericht ablegen
  </li><li>
 7 Halbjahresbericht versenden
  </li><li>
