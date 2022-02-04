@@ -45,6 +45,6 @@ Sie können Ihre Diagramme immer von oben nach unten statt von links nach rechts
  Aufgabe <b>[Nr]  + [Objekt] + [Verb]</b><img src="./images/task.png">  </img>
  Zwischenereignis <b>[Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/intermediate-event.png"> </img>
  Endereignis <b>[Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/end-event.png"> </img>
- Verbindung <img src="./images/association.png"> </img>
+ Verbindung <img src="./images/sequence-flow.png"> </img>
  
 
