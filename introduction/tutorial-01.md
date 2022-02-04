@@ -8,13 +8,13 @@ Beginnen wir unser BPMN-Tutorial mit einem recht einfachen Prozessdiagramm:
 <li>
 1 Hunger festgestellt 
 </li><li>
-2 einkaufen der Lebensmittel
+2 Lebensmittel einkaufen
  </li><li>
-3 zubereiten der Mahlzeit 
+3 Mahlzeit zubereiten
  </li><li>
 4 Mahlzeit fertig
  </li><li>
-5 essen der Mahlzeit
+5 Mahlzeit essen
  </li><li>
 6 Hunger gestillt
 </li><p></p>
@@ -25,7 +25,7 @@ Danach isst die Person die Mahlzeit und hat ihren Hunger gestillt.
 
 <b>Bewährte Praxis: Benennungskonventionen</b>
  
- Bei der Benennung von <b>Aufgaben</b> versuchen wir, uns an das objektorientierte Designprinzip zu halten und das Muster <b>[Verb] + [Objekt]</b> zu verwenden. Wir würden z. B. sagen: "Besorgen Sie Lebensmittel", nicht: "Kümmern Sie sich zuerst um den Einkauf von Lebensmitteln".
+ Bei der Benennung von <b>Aufgaben</b> versuchen wir, uns an das objektorientierte Designprinzip zu halten und das Muster <b>[Objekt] + [Verb]</b> zu verwenden. Wir würden z. B. sagen: "Bitte Lebensmittel einkaufen", nicht: "Kümmern Sie sich zuerst um den Einkauf von Lebensmitteln".
  <p></p>
 <b>Ereignisse</b> beziehen sich auf etwas, das unabhängig vom Prozess bereits geschehen ist (wenn es sich um fangende Ereignisse handelt) oder als Ergebnis des Prozesses (wenn es sich um werfende Ereignisse handelt). </p>
 
@@ -42,7 +42,7 @@ Sie können Ihre Diagramme immer von oben nach unten statt von links nach rechts
  
  <h3>Verwendete Symbole</h3>
  Startereignis <b>[Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/start-event.png"> </img>
- Aufgabe <b>[Nr] + [Verb] + [Objekt]</b> <img src="./images/task.png">  </img>
+ Aufgabe <b>[Nr]  + [Objekt] + [Verb]</b><img src="./images/task.png">  </img>
  Zwischenereignis <b>[Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/intermediate-event.png"> </img>
  Endereignis <b>[Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/end-event.png"> </img>
  Verbindung <img src="./images/association.png"> </img>
