@@ -25,3 +25,14 @@
 
 
 <p></p>
+<h3>Verwendete Symbole</h3>
+ Pool mit 2 Lane <b>[Objekt]</b> <img src="./images/pool-2lane.png"> </img>
+ Verzweigung <b>[Nr] + [Zustandsabfrage]</b> <img src="./images/exclusive-gateway.png"> </img>
+ Startereignis <b>[Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/start-message-catch-event.png"> </img>
+ Aufgabe <b>[Nr]  + [Objekt] + [Verb]</b><img src="./images/task.png">  </img>
+ Aufgabe <b>[Nr]  + [Objekt] + [Verb]</b><img src="./images/task-throw-message.png">  </img>
+ Zwischenereignis <b>[Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/throw-timer-event-with-comment.png"> </img>
+ Endereignis <b>[Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/end-event.png"> </img>
+ Ablaufrichtung <img src="./images/sequence-flow.png"> </img>
+ Nachrichtenfluss <img src="./images/message-flow.png"> </img>
+ 
