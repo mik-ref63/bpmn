@@ -1,4 +1,4 @@
-<h3>Ablauf mit Verantwortlichkeiten, Verzweigungen, Zeitereignis und Benachrichtigungen</h3>
+<h3>Ablauf mit Verantwortlichkeiten, Verzweigungen, Ereignisbearbeitung und Benachrichtigungen</h3>
 <h4>Diagramm </h4> <b>Prozess "Nutzeranalyseberichte bearbeiten"</b>
 <img src="./images/webanalyse-berichtsprozess.svg"> </img>
 
@@ -30,9 +30,15 @@
 <p></p>
 <h3>Verwendete Symbole</h3>
  Pool mit 2 Lane <b>[Objekt]</b> <img src="./images/pool-2lane.png"> </img> 
+ <em>Visualisiert die Verantwortlichkeiten der enthaltenen Aktivitäten und Aufgaben</em>
  Verzweigung (exklusiv) <b> [Nr] + [Zustandsabfrage]</b> <img src="./images/exclusive-gateway.png"> </img>
+ <em>Bedingungsabfrage: es wird nur ein Zweig durchlaufen </em>
+ 
  Verzweigung (Ereignisbasierend) <b> [Nr] + [Zustandsabfrage]</b> <img src="./images/event-based-gateway.png"> </img>
+ <em>Jeder Zweig für den ein Zwischenereignis existiert wird durchlaufen</em>
+ 
  Startereignis <b> [Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/start-event.png"> </img>
+ Jeder Prozess muss gestartet werden. Dies kann bei einem reinem Verwaltungsprozess allein durch die Bestätigung aller Beteiligten passieren, ab einem definierten Zeitpunkt diesen modellierten Prozess durchzuführen.
  Aufgabe <b> [Nr]  + [Objekt] + [Verb]</b><img src="./images/task.png">  </img>
  Aufgabe die Nachricht versendet <b> [Nr]  + [Objekt] + [Verb]</b><img src="./images/task-throw-message.png">  </img>
  Zwischenereignis nach Erhalt einer Nachricht <b> [Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/intermediate-message-catch-event.png"> </img>
