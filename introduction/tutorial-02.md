@@ -5,11 +5,11 @@
 <h4>Prozessbeschreibung mit weiteren Detaills</h4>
 
 <li>
-1 Prozess zur "Nutzeranalyseberichte bearbeiten" gestartet</p> 
+1 Prozess zur "Nutzeranalyseberichte bearbeiten" gestartet
 </li><li>
-2 Nutzeranalyse gestartet? 
+2 Ereignis eingetreten? 
  </li><li>
-3 Zeitergnis eingetreten? 
+3 Zeitergnis eingetreten 
  </li><li>
 4 Monatsbericht ablegen
  </li><li>
@@ -19,7 +19,7 @@
  </li><li>
 7 Halbjahresbericht versenden
  </li><li>
-8 Ablage?
+8 Ablage
  </li><li>
 9 Prozess beenden?
  </li><li>
@@ -47,4 +47,6 @@
  Endereignis <b> [Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/end-event.png"> </img>
  Ablaufrichtung <img src="./images/sequence-flow.png"> </img>
  Nachrichtenfluss <img src="./images/message-flow.png"> </img>
+ Datenbank oder Ablagesystem <b> [Nr] + [Objekt]</b> <img src="./images/database.png"> </img>
+ <p><em>Zur weiteren Erklärung kann im Prozess die Datenablage und der Zugriff darauf modelliert werden.</em>
  
