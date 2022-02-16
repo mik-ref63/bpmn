@@ -7,7 +7,7 @@
 <li>
 1 Prozess zur "Nutzeranalyseberichte bearbeiten" gestartet</p> 
 </li><li>
-2 Monatsbericht eingetroffen? 
+2 Nutzeranalyse gestartet? 
  </li><li>
 3 Zeitergnis eingetreten? 
  </li><li>
@@ -23,7 +23,7 @@
  </li><li>
 9 Prozess beenden?
  </li><li>
-10 Monatsbericht bearbeitet
+10 Nutzeranalyse beendet
 </li>
 
 
@@ -32,13 +32,14 @@
  Pool mit 2 Lane <b>[Objekt]</b> <img src="./images/pool-2lane.png"> </img> 
  <em>Visualisiert die Verantwortlichkeiten der enthaltenen Aktivitäten und Aufgaben</em>
  Verzweigung (exklusiv) <b> [Nr] + [Zustandsabfrage]</b> <img src="./images/exclusive-gateway.png"> </img>
- <em>Bedingungsabfrage: es wird nur ein Zweig durchlaufen </em>
- 
+ <p><em>Bedingungsabfrage: es wird nur ein Zweig durchlaufen </em>
+ </p>
  Verzweigung (Ereignisbasierend) <b> [Nr] + [Zustandsabfrage]</b> <img src="./images/event-based-gateway.png"> </img>
- <em>Jeder Zweig für den ein Zwischenereignis existiert wird durchlaufen</em>
- 
+ <p><em>Jeder Zweig für den ein Zwischenereignis existiert wird durchlaufen</em>
+ </p>
  Startereignis <b> [Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/start-event.png"> </img>
- Jeder Prozess muss gestartet werden. Dies kann bei einem reinem Verwaltungsprozess allein durch die Bestätigung aller Beteiligten passieren, ab einem definierten Zeitpunkt diesen modellierten Prozess durchzuführen.
+ <em>Jeder Prozess muss gestartet werden. Dies kann bei einem reinem Verwaltungsprozess allein durch die Bestätigung aller Beteiligten passieren, ab einem definierten Zeitpunkt diesen modellierten Prozess durchzuführen.
+ </em>
  Aufgabe <b> [Nr]  + [Objekt] + [Verb]</b><img src="./images/task.png">  </img>
  Aufgabe die Nachricht versendet <b> [Nr]  + [Objekt] + [Verb]</b><img src="./images/task-throw-message.png">  </img>
  Zwischenereignis nach Erhalt einer Nachricht <b> [Nr] + [Objekt] + [Verb im Passiv]</b> <img src="./images/intermediate-message-catch-event.png"> </img>
