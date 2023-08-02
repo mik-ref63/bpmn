@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1iam6oy" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_0uidif0">
+    <bpmn:participant id="Participant_1nojs2m" name="Antragsteller" processRef="Process_18l3d7g" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_18l3d7g" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1w51ztm</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1dvw0kb" name="Antrag mit Edge ausfüllen">
+      <bpmn:incoming>Flow_1w51ztm</bpmn:incoming>
+      <bpmn:outgoing>Flow_0czahmo</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0793fy1" name="Vom Optiker ausfüllen und stempeln lassen">
+      <bpmn:incoming>Flow_0czahmo</bpmn:incoming>
+      <bpmn:outgoing>Flow_0xt0faw</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0ewx1tl" name="Dienststelle unterschreiben und stempeln lassen">
+      <bpmn:incoming>Flow_0xt0faw</bpmn:incoming>
+      <bpmn:outgoing>Flow_0br3z0m</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0t2aifi" name="Unterlagen scannen und an ZBB senden">
+      <bpmn:incoming>Flow_0br3z0m</bpmn:incoming>
+      <bpmn:outgoing>Flow_1eip0qt</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0n84z2k" name="Unterlagen per Poststelle an ZBB senden">
+      <bpmn:incoming>Flow_1eip0qt</bpmn:incoming>
+      <bpmn:outgoing>Flow_13q68ig</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_0tkin0x">
+      <bpmn:incoming>Flow_13q68ig</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1w51ztm" sourceRef="StartEvent_1" targetRef="Activity_1dvw0kb" />
+    <bpmn:sequenceFlow id="Flow_0czahmo" sourceRef="Activity_1dvw0kb" targetRef="Activity_0793fy1" />
+    <bpmn:sequenceFlow id="Flow_0xt0faw" sourceRef="Activity_0793fy1" targetRef="Activity_0ewx1tl" />
+    <bpmn:sequenceFlow id="Flow_0br3z0m" sourceRef="Activity_0ewx1tl" targetRef="Activity_0t2aifi" />
+    <bpmn:sequenceFlow id="Flow_1eip0qt" sourceRef="Activity_0t2aifi" targetRef="Activity_0n84z2k" />
+    <bpmn:sequenceFlow id="Flow_13q68ig" sourceRef="Activity_0n84z2k" targetRef="Event_0tkin0x" />
+    <bpmn:textAnnotation id="TextAnnotation_0sby6zu">
+      <bpmn:text>Bildschirmarbeitsplatzbrille ("PC-Brille") beantragen</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_09hwl8k">
+      <bpmn:text>Referat 14, Frau Fischer, bspw.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0adr4k1">
+      <bpmn:text>Kleemann, Monja &lt;Monja.Kleemann@zbb.brandenburg.de&gt;</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1vtaj3i" sourceRef="StartEvent_1" targetRef="TextAnnotation_0sby6zu" />
+    <bpmn:association id="Association_1e5bltx" sourceRef="Activity_0ewx1tl" targetRef="TextAnnotation_09hwl8k" />
+    <bpmn:association id="Association_0arblpt" sourceRef="Activity_0t2aifi" targetRef="TextAnnotation_0adr4k1" />
+    <bpmn:textAnnotation id="TextAnnotation_1vev70s">
+      <bpmn:text>Mit einem anderen Browser kann ev. die Texteingabe nicht funktionieren!</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_01yjcfr" sourceRef="Activity_1dvw0kb" targetRef="TextAnnotation_1vev70s" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0uidif0">
+      <bpmndi:BPMNShape id="Participant_1nojs2m_di" bpmnElement="Participant_1nojs2m" isHorizontal="true">
+        <dc:Bounds x="120" y="80" width="1340" height="400" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0sby6zu_di" bpmnElement="TextAnnotation_0sby6zu">
+        <dc:Bounds x="220" y="160" width="211" height="42" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_09hwl8k_di" bpmnElement="TextAnnotation_09hwl8k">
+        <dc:Bounds x="690" y="140" width="100" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0adr4k1_di" bpmnElement="TextAnnotation_0adr4k1">
+        <dc:Bounds x="850" y="140" width="100" height="82" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1vev70s_di" bpmnElement="TextAnnotation_1vev70s">
+        <dc:Bounds x="410" y="140" width="240" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1w51ztm_di" bpmnElement="Flow_1w51ztm">
+        <di:waypoint x="215" y="267" />
+        <di:waypoint x="270" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0czahmo_di" bpmnElement="Flow_0czahmo">
+        <di:waypoint x="370" y="267" />
+        <di:waypoint x="430" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xt0faw_di" bpmnElement="Flow_0xt0faw">
+        <di:waypoint x="530" y="267" />
+        <di:waypoint x="590" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0br3z0m_di" bpmnElement="Flow_0br3z0m">
+        <di:waypoint x="690" y="267" />
+        <di:waypoint x="750" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1eip0qt_di" bpmnElement="Flow_1eip0qt">
+        <di:waypoint x="850" y="267" />
+        <di:waypoint x="950" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13q68ig_di" bpmnElement="Flow_13q68ig">
+        <di:waypoint x="1050" y="267" />
+        <di:waypoint x="1152" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="249" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1dvw0kb_di" bpmnElement="Activity_1dvw0kb">
+        <dc:Bounds x="270" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0793fy1_di" bpmnElement="Activity_0793fy1">
+        <dc:Bounds x="430" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ewx1tl_di" bpmnElement="Activity_0ewx1tl">
+        <dc:Bounds x="590" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0t2aifi_di" bpmnElement="Activity_0t2aifi">
+        <dc:Bounds x="750" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0n84z2k_di" bpmnElement="Activity_0n84z2k">
+        <dc:Bounds x="950" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0tkin0x_di" bpmnElement="Event_0tkin0x">
+        <dc:Bounds x="1152" y="249" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1vtaj3i_di" bpmnElement="Association_1vtaj3i">
+        <di:waypoint x="208" y="253" />
+        <di:waypoint x="249" y="202" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1e5bltx_di" bpmnElement="Association_1e5bltx">
+        <di:waypoint x="676" y="227" />
+        <di:waypoint x="705" y="194" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0arblpt_di" bpmnElement="Association_0arblpt">
+        <di:waypoint x="836" y="227" />
+        <di:waypoint x="850" y="211" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_01yjcfr_di" bpmnElement="Association_01yjcfr">
+        <di:waypoint x="366" y="230" />
+        <di:waypoint x="419" y="188" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

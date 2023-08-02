@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0hbukx4" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_0zn0kpm">
+    <bpmn:participant id="Participant_13yj7fv" name="Referat N.N. / Antragsteller" processRef="Process_0aqysxj" />
+    <bpmn:participant id="Participant_1nbonmw" name="Referat 17" processRef="Process_1nt859p" />
+    <bpmn:messageFlow id="Flow_0qv73tg" sourceRef="Activity_0xlzbjv" targetRef="Event_1c0er2r" />
+    <bpmn:messageFlow id="Flow_0rdoszd" sourceRef="Event_1xifwsd" targetRef="Event_1os5mxu" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0aqysxj" isExecutable="true">
+    <bpmn:task id="Activity_0n1bwkh" name="Aktennummer heraussuchen">
+      <bpmn:incoming>Flow_1mg4p6p</bpmn:incoming>
+      <bpmn:outgoing>Flow_0gtut0m</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1mg4p6p</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sendTask id="Activity_0xlzbjv" name="E-Mail an Funktionspostf.">
+      <bpmn:incoming>Flow_0gtut0m</bpmn:incoming>
+      <bpmn:outgoing>Flow_0bjocjh</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:endEvent id="Event_1xjfo8n">
+      <bpmn:incoming>Flow_1565udv</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:intermediateCatchEvent id="Event_1os5mxu">
+      <bpmn:incoming>Flow_0bjocjh</bpmn:incoming>
+      <bpmn:outgoing>Flow_1565udv</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_13qh6ve" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_1565udv" sourceRef="Event_1os5mxu" targetRef="Event_1xjfo8n" />
+    <bpmn:sequenceFlow id="Flow_0bjocjh" sourceRef="Activity_0xlzbjv" targetRef="Event_1os5mxu" />
+    <bpmn:sequenceFlow id="Flow_0gtut0m" sourceRef="Activity_0n1bwkh" targetRef="Activity_0xlzbjv" />
+    <bpmn:sequenceFlow id="Flow_1mg4p6p" sourceRef="StartEvent_1" targetRef="Activity_0n1bwkh" />
+    <bpmn:textAnnotation id="TextAnnotation_110xnk4">
+      <bpmn:text>Siehe Aktenplan unter Laufwerk U:\Aktenplan</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0814j5q">
+      <bpmn:text>Best-Practice: Für jedes Jahr eine Akte anlegen</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0607jwg" sourceRef="Activity_0n1bwkh" targetRef="TextAnnotation_110xnk4" />
+    <bpmn:association id="Association_1k8yfm1" sourceRef="StartEvent_1" targetRef="TextAnnotation_0814j5q" />
+    <bpmn:textAnnotation id="TextAnnotation_17g5w9o">
+      <bpmn:text>Bitte Angabe des Betreffs mit mind. 5-stelliger Aktennummer: bspw. 254-30      für    Konzepte zur Umsetzung [Umsetzung von Open Government im Land Brandenburg - Open Data / Open Government - eGovernment - Angelegenheiten mit landesweitem Bezug]                                                                                                                                                                                             An mik.registratur senden!</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0687v1a" sourceRef="Activity_0xlzbjv" targetRef="TextAnnotation_17g5w9o" />
+    <bpmn:textAnnotation id="TextAnnotation_0zlwvt4">
+      <bpmn:text>Für die Registratur wäre es sicher einfacher, wenn für jede anzulegende Akte ein genaues Betreff angegeben wird. Also Bitte darauf Achten!</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1tnriqd" sourceRef="Activity_0xlzbjv" targetRef="TextAnnotation_0zlwvt4" />
+    <bpmn:textAnnotation id="TextAnnotation_12u3sqr">
+      <bpmn:text>Akten sind erst in der Suche oder beim Neuanlegen sichtbar, da erst ein Vorgang angelegt werden muss</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_09fdbhx" sourceRef="Event_1os5mxu" targetRef="TextAnnotation_12u3sqr" />
+  </bpmn:process>
+  <bpmn:process id="Process_1nt859p" isExecutable="false">
+    <bpmn:startEvent id="Event_1c0er2r">
+      <bpmn:outgoing>Flow_0qhrtjf</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1yeaq5z" />
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_1xifwsd">
+      <bpmn:incoming>Flow_0jzg8dy</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0b2630b" />
+    </bpmn:endEvent>
+    <bpmn:task id="Activity_103ponh" name="Akte anlegen">
+      <bpmn:incoming>Flow_0qhrtjf</bpmn:incoming>
+      <bpmn:outgoing>Flow_0jzg8dy</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0jzg8dy" sourceRef="Activity_103ponh" targetRef="Event_1xifwsd" />
+    <bpmn:sequenceFlow id="Flow_0qhrtjf" sourceRef="Event_1c0er2r" targetRef="Activity_103ponh" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0zn0kpm">
+      <bpmndi:BPMNShape id="Participant_13yj7fv_di" bpmnElement="Participant_13yj7fv" isHorizontal="true">
+        <dc:Bounds x="150" y="80" width="1010" height="500" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_110xnk4_di" bpmnElement="TextAnnotation_110xnk4">
+        <dc:Bounds x="250" y="440" width="110" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0814j5q_di" bpmnElement="TextAnnotation_0814j5q">
+        <dc:Bounds x="240" y="290" width="195" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_17g5w9o_di" bpmnElement="TextAnnotation_17g5w9o">
+        <dc:Bounds x="240" y="110" width="442" height="120" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0zlwvt4_di" bpmnElement="TextAnnotation_0zlwvt4">
+        <dc:Bounds x="750" y="110" width="100" height="166" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_12u3sqr_di" bpmnElement="TextAnnotation_12u3sqr">
+        <dc:Bounds x="780" y="290" width="321" height="57" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1565udv_di" bpmnElement="Flow_1565udv">
+        <di:waypoint x="738" y="380" />
+        <di:waypoint x="782" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0bjocjh_di" bpmnElement="Flow_0bjocjh">
+        <di:waypoint x="640" y="380" />
+        <di:waypoint x="702" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0gtut0m_di" bpmnElement="Flow_0gtut0m">
+        <di:waypoint x="480" y="380" />
+        <di:waypoint x="540" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mg4p6p_di" bpmnElement="Flow_1mg4p6p">
+        <di:waypoint x="236" y="380" />
+        <di:waypoint x="380" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0n1bwkh_di" bpmnElement="Activity_0n1bwkh">
+        <dc:Bounds x="380" y="340" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="200" y="362" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04gwhib_di" bpmnElement="Activity_0xlzbjv">
+        <dc:Bounds x="540" y="340" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1xjfo8n_di" bpmnElement="Event_1xjfo8n">
+        <dc:Bounds x="782" y="362" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_028yhi9_di" bpmnElement="Event_1os5mxu">
+        <dc:Bounds x="702" y="362" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0607jwg_di" bpmnElement="Association_0607jwg">
+        <di:waypoint x="380" y="409" />
+        <di:waypoint x="326" y="440" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1k8yfm1_di" bpmnElement="Association_1k8yfm1">
+        <di:waypoint x="230" y="367" />
+        <di:waypoint x="266" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0687v1a_di" bpmnElement="Association_0687v1a">
+        <di:waypoint x="543" y="343" />
+        <di:waypoint x="399" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1tnriqd_di" bpmnElement="Association_1tnriqd">
+        <di:waypoint x="623" y="340" />
+        <di:waypoint x="750" y="186" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_09fdbhx_di" bpmnElement="Association_09fdbhx">
+        <di:waypoint x="735" y="370" />
+        <di:waypoint x="780" y="342" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Participant_1nbonmw_di" bpmnElement="Participant_1nbonmw" isHorizontal="true">
+        <dc:Bounds x="150" y="640" width="1000" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0jzg8dy_di" bpmnElement="Flow_0jzg8dy">
+        <di:waypoint x="490" y="770" />
+        <di:waypoint x="702" y="770" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qhrtjf_di" bpmnElement="Flow_0qhrtjf">
+        <di:waypoint x="248" y="770" />
+        <di:waypoint x="390" y="770" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0xiac9w_di" bpmnElement="Event_1c0er2r">
+        <dc:Bounds x="212" y="752" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1mwyrzl_di" bpmnElement="Event_1xifwsd">
+        <dc:Bounds x="702" y="752" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_103ponh_di" bpmnElement="Activity_103ponh">
+        <dc:Bounds x="390" y="730" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0qv73tg_di" bpmnElement="Flow_0qv73tg">
+        <di:waypoint x="590" y="420" />
+        <di:waypoint x="590" y="610" />
+        <di:waypoint x="230" y="610" />
+        <di:waypoint x="230" y="752" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0rdoszd_di" bpmnElement="Flow_0rdoszd">
+        <di:waypoint x="720" y="752" />
+        <di:waypoint x="720" y="398" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

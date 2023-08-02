@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_13j0p3h" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_0k3l5uq">
+    <bpmn:participant id="Participant_0vl931k" name="EL_DOK_Nutzer" processRef="Process_0qxjjvo" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0qxjjvo" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_055j2cg</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_02x5yip" name="MS Word aufrufen">
+      <bpmn:incoming>Flow_055j2cg</bpmn:incoming>
+      <bpmn:outgoing>Flow_1hjbtnb</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_1gm7fqk" name="Add-Ins auswählen und Vorlage aussuchen">
+      <bpmn:incoming>Flow_1hjbtnb</bpmn:incoming>
+      <bpmn:outgoing>Flow_05f5lal</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0n4zp0y" name="Dokument speichern unter EL.DOK-Vorgang">
+      <bpmn:incoming>Flow_05f5lal</bpmn:incoming>
+      <bpmn:outgoing>Flow_04tckg8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0fnz6dx" name="Dokument schließen">
+      <bpmn:incoming>Flow_04tckg8</bpmn:incoming>
+      <bpmn:outgoing>Flow_0scli7o</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_052ushl" name="Dokument erneut öffnen">
+      <bpmn:incoming>Flow_0scli7o</bpmn:incoming>
+      <bpmn:outgoing>Flow_11awl2i</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0y9zby4" name="kompletten Dokumenteninhalt mit Strg-A auswählen">
+      <bpmn:incoming>Flow_11awl2i</bpmn:incoming>
+      <bpmn:outgoing>Flow_0h4t84s</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0n5un3e" name="F9 drücken">
+      <bpmn:incoming>Flow_0h4t84s</bpmn:incoming>
+      <bpmn:outgoing>Flow_09hckzx</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_1metrho" name="Dokument abschliessend bearbeiten">
+      <bpmn:incoming>Flow_09hckzx</bpmn:incoming>
+      <bpmn:outgoing>Flow_0z3wfbo</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_1kgkkkr">
+      <bpmn:incoming>Flow_0z3wfbo</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_055j2cg" sourceRef="StartEvent_1" targetRef="Activity_02x5yip" />
+    <bpmn:sequenceFlow id="Flow_1hjbtnb" sourceRef="Activity_02x5yip" targetRef="Activity_1gm7fqk" />
+    <bpmn:sequenceFlow id="Flow_05f5lal" sourceRef="Activity_1gm7fqk" targetRef="Activity_0n4zp0y" />
+    <bpmn:sequenceFlow id="Flow_04tckg8" sourceRef="Activity_0n4zp0y" targetRef="Activity_0fnz6dx" />
+    <bpmn:sequenceFlow id="Flow_0scli7o" sourceRef="Activity_0fnz6dx" targetRef="Activity_052ushl" />
+    <bpmn:sequenceFlow id="Flow_11awl2i" sourceRef="Activity_052ushl" targetRef="Activity_0y9zby4" />
+    <bpmn:sequenceFlow id="Flow_0h4t84s" sourceRef="Activity_0y9zby4" targetRef="Activity_0n5un3e" />
+    <bpmn:sequenceFlow id="Flow_09hckzx" sourceRef="Activity_0n5un3e" targetRef="Activity_1metrho" />
+    <bpmn:sequenceFlow id="Flow_0z3wfbo" sourceRef="Activity_1metrho" targetRef="Event_1kgkkkr" />
+    <bpmn:textAnnotation id="TextAnnotation_1dhzpse">
+      <bpmn:text>Worddokument mit Vorlage in EL.DOK erstellen</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1ljnp2l">
+      <bpmn:text>Im Zuge der Ablage/Veraktung in EL.DOK-neu wird das Dokument dann als docx im richtigen Format gespeichert</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0dwflg1" sourceRef="StartEvent_1" targetRef="TextAnnotation_1dhzpse" />
+    <bpmn:association id="Association_1md8g3o" sourceRef="Activity_0n4zp0y" targetRef="TextAnnotation_1ljnp2l" />
+    <bpmn:textAnnotation id="TextAnnotation_0bgrza7">
+      <bpmn:text>Beim erneuten Öffnen und nach dem auschecken des Dokuments, markieren Sie bitte den gesamten Dokumenteninhalt mit Strg A und drücken Sie dann F9 zur Aktualisierung des Inhalts. Dies bewirkt, dass dann auch das Aktenzeichen und weitere EL.DOK-relevante Daten in das Dokument eingefügt werden. Anschließend können Sie mit der Erstellung des Textes fortfahren.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0cd9pxq" sourceRef="Activity_0n5un3e" targetRef="TextAnnotation_0bgrza7" />
+    <bpmn:textAnnotation id="TextAnnotation_0o6bu2i">
+      <bpmn:text>Bei dieser Vorgehensweise handelt es sich um eine Zwischenlösung, die abgelöst werden kann, wenn der Formularserver des ZIT-BB über eine Schnittstelle mit EL.DOK verbunden worden ist. Dazu wird derzeit ein Teilprojekt in Zusammenarbeit mit dem ZIT-BB aufgesetzt. Im Ergebnis können die Vorlagen dann – vermutlich ab 4. Quartal 2021 – wieder innerhalb von EL.DOK aufgerufen und befüllt werden. Bis dahin wird um Verständnis gebeten, dass nur diese Arbeitsweise möglich ist.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1woch2v" sourceRef="Event_1kgkkkr" targetRef="TextAnnotation_0o6bu2i" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0k3l5uq">
+      <bpmndi:BPMNShape id="Participant_0vl931k_di" bpmnElement="Participant_0vl931k" isHorizontal="true">
+        <dc:Bounds x="129" y="80" width="1591" height="532" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0z3wfbo_di" bpmnElement="Flow_0z3wfbo">
+        <di:waypoint x="1490" y="267" />
+        <di:waypoint x="1552" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09hckzx_di" bpmnElement="Flow_09hckzx">
+        <di:waypoint x="1330" y="267" />
+        <di:waypoint x="1390" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0h4t84s_di" bpmnElement="Flow_0h4t84s">
+        <di:waypoint x="1170" y="267" />
+        <di:waypoint x="1230" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11awl2i_di" bpmnElement="Flow_11awl2i">
+        <di:waypoint x="1010" y="267" />
+        <di:waypoint x="1070" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0scli7o_di" bpmnElement="Flow_0scli7o">
+        <di:waypoint x="850" y="267" />
+        <di:waypoint x="910" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_04tckg8_di" bpmnElement="Flow_04tckg8">
+        <di:waypoint x="690" y="267" />
+        <di:waypoint x="750" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_05f5lal_di" bpmnElement="Flow_05f5lal">
+        <di:waypoint x="530" y="267" />
+        <di:waypoint x="590" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1hjbtnb_di" bpmnElement="Flow_1hjbtnb">
+        <di:waypoint x="370" y="267" />
+        <di:waypoint x="430" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_055j2cg_di" bpmnElement="Flow_055j2cg">
+        <di:waypoint x="215" y="267" />
+        <di:waypoint x="270" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="249" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02x5yip_di" bpmnElement="Activity_02x5yip">
+        <dc:Bounds x="270" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gm7fqk_di" bpmnElement="Activity_1gm7fqk">
+        <dc:Bounds x="430" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0n4zp0y_di" bpmnElement="Activity_0n4zp0y">
+        <dc:Bounds x="590" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0fnz6dx_di" bpmnElement="Activity_0fnz6dx">
+        <dc:Bounds x="750" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_052ushl_di" bpmnElement="Activity_052ushl">
+        <dc:Bounds x="910" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0y9zby4_di" bpmnElement="Activity_0y9zby4">
+        <dc:Bounds x="1070" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0n5un3e_di" bpmnElement="Activity_0n5un3e">
+        <dc:Bounds x="1230" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1metrho_di" bpmnElement="Activity_1metrho">
+        <dc:Bounds x="1390" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1kgkkkr_di" bpmnElement="Event_1kgkkkr">
+        <dc:Bounds x="1552" y="249" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1dhzpse_di" bpmnElement="TextAnnotation_1dhzpse">
+        <dc:Bounds x="220" y="160" width="160" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1ljnp2l_di" bpmnElement="TextAnnotation_1ljnp2l">
+        <dc:Bounds x="690" y="140" width="260" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0bgrza7_di" bpmnElement="TextAnnotation_0bgrza7">
+        <dc:Bounds x="1330" y="100" width="371" height="100" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0o6bu2i_di" bpmnElement="TextAnnotation_0o6bu2i">
+        <dc:Bounds x="1490" y="330" width="211" height="222" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0dwflg1_di" bpmnElement="Association_0dwflg1">
+        <di:waypoint x="208" y="253" />
+        <di:waypoint x="250" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1md8g3o_di" bpmnElement="Association_1md8g3o">
+        <di:waypoint x="676" y="227" />
+        <di:waypoint x="709" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0cd9pxq_di" bpmnElement="Association_0cd9pxq">
+        <di:waypoint x="1316" y="227" />
+        <di:waypoint x="1340" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1woch2v_di" bpmnElement="Association_1woch2v">
+        <di:waypoint x="1564" y="284" />
+        <di:waypoint x="1546" y="330" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

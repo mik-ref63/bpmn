@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_16m3bvi" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_04rjz0n">
+    <bpmn:participant id="Participant_0daref7" name="MAIS 2.0 Mandant" processRef="Process_0y4eqie" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0y4eqie" isExecutable="true">
+    <bpmn:sequenceFlow id="Flow_0vkdhph" sourceRef="StartEvent_1" targetRef="Activity_0ys1xap" />
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0vkdhph</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_09etiwy">
+      <bpmn:incoming>Flow_1guphsq</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1guphsq" sourceRef="Activity_0ys1xap" targetRef="Event_09etiwy" />
+    <bpmn:task id="Activity_0ys1xap" name="Fehlermeldung als E-Mail an ZIT-Funktionspostfach">
+      <bpmn:incoming>Flow_0vkdhph</bpmn:incoming>
+      <bpmn:outgoing>Flow_1guphsq</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:textAnnotation id="TextAnnotation_1doomvc">
+      <bpmn:text>Nach Abschluss der Projektarbeit und Freigabe des LSP wird das offizielle Funktionspostfach sixadmin@zit-bb verwendet, bis dahin wird das Kanbanboard verwendet.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_13y1c53" sourceRef="StartEvent_1" targetRef="TextAnnotation_1doomvc" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_04rjz0n">
+      <bpmndi:BPMNShape id="Participant_0daref7_di" bpmnElement="Participant_0daref7" isHorizontal="true">
+        <dc:Bounds x="160" y="70" width="600" height="320" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1doomvc_di" bpmnElement="TextAnnotation_1doomvc">
+        <dc:Bounds x="230" y="90" width="408" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0vkdhph_di" bpmnElement="Flow_0vkdhph">
+        <di:waypoint x="265" y="230" />
+        <di:waypoint x="400" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1guphsq_di" bpmnElement="Flow_1guphsq">
+        <di:waypoint x="500" y="230" />
+        <di:waypoint x="622" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="229" y="212" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_09etiwy_di" bpmnElement="Event_09etiwy">
+        <dc:Bounds x="622" y="212" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ys1xap_di" bpmnElement="Activity_0ys1xap">
+        <dc:Bounds x="400" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_13y1c53_di" bpmnElement="Association_13y1c53">
+        <di:waypoint x="254" y="213" />
+        <di:waypoint x="282" y="146" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

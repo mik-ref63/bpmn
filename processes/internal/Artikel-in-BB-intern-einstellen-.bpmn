@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0z8zfri" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_1kwj79t">
+    <bpmn:participant id="Participant_1v879yd" processRef="Process_1rrvcgy" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1rrvcgy" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1ttozj2</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_09bi18x" name="Unter welchem Mandanten soll der Artikel eingestellt werden!">
+      <bpmn:incoming>Flow_1ttozj2</bpmn:incoming>
+      <bpmn:outgoing>Flow_06o7f1i</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0566ani" name="DSGVO Konform?">
+      <bpmn:incoming>Flow_06o7f1i</bpmn:incoming>
+      <bpmn:outgoing>Flow_1hwbcq4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0bkcjwh" name="BbgBITV Konform?">
+      <bpmn:incoming>Flow_1hwbcq4</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rzdqc5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_1ik59r7" name="Wer übernimmt redaktionelle Verantwortung?">
+      <bpmn:incoming>Flow_1rzdqc5</bpmn:incoming>
+      <bpmn:outgoing>Flow_1nowg92</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_1ca79t9">
+      <bpmn:incoming>Flow_1nowg92</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1ttozj2" sourceRef="StartEvent_1" targetRef="Activity_09bi18x" />
+    <bpmn:sequenceFlow id="Flow_06o7f1i" sourceRef="Activity_09bi18x" targetRef="Activity_0566ani" />
+    <bpmn:sequenceFlow id="Flow_1hwbcq4" sourceRef="Activity_0566ani" targetRef="Activity_0bkcjwh" />
+    <bpmn:sequenceFlow id="Flow_1rzdqc5" sourceRef="Activity_0bkcjwh" targetRef="Activity_1ik59r7" />
+    <bpmn:sequenceFlow id="Flow_1nowg92" sourceRef="Activity_1ik59r7" targetRef="Event_1ca79t9" />
+    <bpmn:textAnnotation id="TextAnnotation_1la3kd3">
+      <bpmn:text>Unter welchem Mandanten soll der Artikel veröffentlicht werden?</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0kio6jy">
+      <bpmn:text>Umfragen müssen immer Anonymität gewährleisten!</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1u85eo9" sourceRef="StartEvent_1" targetRef="TextAnnotation_1la3kd3" />
+    <bpmn:association id="Association_06j3bg4" sourceRef="Activity_0566ani" targetRef="TextAnnotation_0kio6jy" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1kwj79t">
+      <bpmndi:BPMNShape id="Participant_1v879yd_di" bpmnElement="Participant_1v879yd" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1360" height="310" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1la3kd3_di" bpmnElement="TextAnnotation_1la3kd3">
+        <dc:Bounds x="310" y="180" width="200" height="41" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0kio6jy_di" bpmnElement="TextAnnotation_0kio6jy">
+        <dc:Bounds x="830" y="140" width="100" height="68" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1ttozj2_di" bpmnElement="Flow_1ttozj2">
+        <di:waypoint x="295" y="267" />
+        <di:waypoint x="530" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06o7f1i_di" bpmnElement="Flow_06o7f1i">
+        <di:waypoint x="630" y="267" />
+        <di:waypoint x="730" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1hwbcq4_di" bpmnElement="Flow_1hwbcq4">
+        <di:waypoint x="830" y="267" />
+        <di:waypoint x="940" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rzdqc5_di" bpmnElement="Flow_1rzdqc5">
+        <di:waypoint x="1040" y="267" />
+        <di:waypoint x="1150" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1nowg92_di" bpmnElement="Flow_1nowg92">
+        <di:waypoint x="1250" y="267" />
+        <di:waypoint x="1402" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="259" y="249" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_09bi18x_di" bpmnElement="Activity_09bi18x">
+        <dc:Bounds x="530" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0566ani_di" bpmnElement="Activity_0566ani">
+        <dc:Bounds x="730" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0bkcjwh_di" bpmnElement="Activity_0bkcjwh">
+        <dc:Bounds x="940" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ik59r7_di" bpmnElement="Activity_1ik59r7">
+        <dc:Bounds x="1150" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ca79t9_di" bpmnElement="Event_1ca79t9">
+        <dc:Bounds x="1402" y="249" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1u85eo9_di" bpmnElement="Association_1u85eo9">
+        <di:waypoint x="291" y="255" />
+        <di:waypoint x="330" y="221" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_06j3bg4_di" bpmnElement="Association_06j3bg4">
+        <di:waypoint x="816" y="227" />
+        <di:waypoint x="833" y="208" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

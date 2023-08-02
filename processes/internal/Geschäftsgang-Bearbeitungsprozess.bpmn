@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_14rk2ww" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_02t7hd5">
+    <bpmn:participant id="Participant_00f7s6v" name="Mitarbeiter" processRef="Process_14yiscb" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_14yiscb" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" />
+    <bpmn:textAnnotation id="TextAnnotation_1757m3w">
+      <bpmn:text>Start Bearbeitungsprozess EL.DOK</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_03pe3sv" sourceRef="StartEvent_1" targetRef="TextAnnotation_1757m3w" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_02t7hd5">
+      <bpmndi:BPMNShape id="Participant_00f7s6v_di" bpmnElement="Participant_00f7s6v" isHorizontal="true">
+        <dc:Bounds x="160" y="60" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="222" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1757m3w_di" bpmnElement="TextAnnotation_1757m3w">
+        <dc:Bounds x="260" y="70" width="250" height="26" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_03pe3sv_di" bpmnElement="Association_03pe3sv">
+        <di:waypoint x="250" y="162" />
+        <di:waypoint x="292" y="96" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

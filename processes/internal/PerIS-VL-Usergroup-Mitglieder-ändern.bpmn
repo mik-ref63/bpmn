@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1k2yxok" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_1rxe42c">
+    <bpmn:participant id="Participant_0dsv8wc" name="VL-MIK-PerIS-Usergroup" processRef="Process_0sh8d1w" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0sh8d1w" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="VL-MIK-PerIS-Usergroup ändern">
+      <bpmn:outgoing>Flow_07kq0y3</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_0s7lupz" name="Outlook-Adressbuch öffnen">
+      <bpmn:incoming>Flow_07kq0y3</bpmn:incoming>
+      <bpmn:outgoing>Flow_1gepd1w</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_1j421o6" name="VL-MIK-PerIS-Usergroup suchen">
+      <bpmn:incoming>Flow_1gepd1w</bpmn:incoming>
+      <bpmn:outgoing>Flow_0abj1b0</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_14v9fh5" name="Einträge ändern">
+      <bpmn:incoming>Flow_0abj1b0</bpmn:incoming>
+      <bpmn:outgoing>Flow_065ibn6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_0p7s4b7" name="VL-MIK-PerIS-Usergroup aktualisiert">
+      <bpmn:incoming>Flow_065ibn6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_07kq0y3" sourceRef="StartEvent_1" targetRef="Activity_0s7lupz" />
+    <bpmn:sequenceFlow id="Flow_1gepd1w" sourceRef="Activity_0s7lupz" targetRef="Activity_1j421o6" />
+    <bpmn:sequenceFlow id="Flow_0abj1b0" sourceRef="Activity_1j421o6" targetRef="Activity_14v9fh5" />
+    <bpmn:sequenceFlow id="Flow_065ibn6" sourceRef="Activity_14v9fh5" targetRef="Event_0p7s4b7" />
+    <bpmn:textAnnotation id="TextAnnotation_0xt1cp4">
+      <bpmn:text>VL-MIK-PerIS-Usergroup ist eine statische Benutzer-Verteilergruppe im Outook-Exchange-Server, Sie kann vom Besitzer selbständig erweitert und verändert werden. Aktueller Besitzer Herr M. Hilse</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0dyaf8a">
+      <bpmn:text>In der VL-MIK-PerIS-Usergroup sind alle Mitglieder der PUG geführt, sollten einige Teilnehmer nicht im AD seinmüssen diese durch MIK-Service 17 einen Eintrag im Adressbuch bekommen, da sie sonst nicht in die Verteilerliste aufgenommen werden können!</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1r6fppp" sourceRef="StartEvent_1" targetRef="TextAnnotation_0xt1cp4" />
+    <bpmn:association id="Association_1c0o5xq" sourceRef="Activity_1j421o6" targetRef="TextAnnotation_0dyaf8a" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1rxe42c">
+      <bpmndi:BPMNShape id="Participant_0dsv8wc_di" bpmnElement="Participant_0dsv8wc" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="788" height="400" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_065ibn6_di" bpmnElement="Flow_065ibn6">
+        <di:waypoint x="750" y="267" />
+        <di:waypoint x="812" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0abj1b0_di" bpmnElement="Flow_0abj1b0">
+        <di:waypoint x="590" y="267" />
+        <di:waypoint x="650" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1gepd1w_di" bpmnElement="Flow_1gepd1w">
+        <di:waypoint x="430" y="267" />
+        <di:waypoint x="490" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07kq0y3_di" bpmnElement="Flow_07kq0y3">
+        <di:waypoint x="275" y="267" />
+        <di:waypoint x="330" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="239" y="249" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="213" y="292" width="89" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0s7lupz_di" bpmnElement="Activity_0s7lupz">
+        <dc:Bounds x="330" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1j421o6_di" bpmnElement="Activity_1j421o6">
+        <dc:Bounds x="490" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14v9fh5_di" bpmnElement="Activity_14v9fh5">
+        <dc:Bounds x="650" y="227" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0p7s4b7_di" bpmnElement="Event_0p7s4b7">
+        <dc:Bounds x="812" y="249" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="795" y="292" width="71" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0xt1cp4_di" bpmnElement="TextAnnotation_0xt1cp4">
+        <dc:Bounds x="280" y="160" width="420" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0dyaf8a_di" bpmnElement="TextAnnotation_0dyaf8a">
+        <dc:Bounds x="530" y="330" width="390" height="68" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1r6fppp_di" bpmnElement="Association_1r6fppp">
+        <di:waypoint x="268" y="253" />
+        <di:waypoint x="299" y="214" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1c0o5xq_di" bpmnElement="Association_1c0o5xq">
+        <di:waypoint x="561" y="307" />
+        <di:waypoint x="572" y="330" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
