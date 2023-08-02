@@ -3,9 +3,6 @@
 
 BPMN steht für <b><em>"Business Process Model and Notation" </em></b> und ist eine grafische Spezifikationssprache in der Wirtschaftsinformatik und im Prozessmanagement. Sie stellt Symbole zur Verfügung, mit denen Fach-, Methoden- und Informatikspezialisten Geschäftsprozesse und Arbeitsabläufe modellieren und dokumentieren können.
 
-
-Warum sollte ich mich für die BPMN interessieren?
-
 BPMN ist der weltweite Standard für die Prozessmodellierung und eine der wichtigsten Komponenten der Informationstechnologie, um Geschäftsziele zu erreichen.
 
 Immer mehr Unternehmen setzen BPMN ein und an immer mehr Universitäten wird BPMN als Fach gelehrt. Dies sind die Gründe dafür:
